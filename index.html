@@ -5,33 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Satisfy&family=Lobster&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
     <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
-
+        <h1>Rock, Paper, Scissors : Test Your Luck
+        </h1>
     </header>
     <main>
+        <h3>Test your luck: win 5 times to claim your victory!</h3>
         <!-- scoreboard -->
         <div class="scoreboard">
-            <span class="scores"></span>
-            <span class="scores"></span>
+            <span class="scores"><h3>Player</h3><p class="p_score">0</p></span>
+            <span class="scores"><h3>Computer</h3><p class="c_score">0</p></span>
         </div>
         <!-- img display section -->
         <div class="images">
-            <div class="rps_img"></div>
-            <div class="rps_img"></div>
+            <div class="rps_img p_img">one</div>
+            <div class="button_section">
+                <span class="center_words">
+                    <p class="message">Choose: Rock, Paper, Scissors</p>
+                </span>
+                <div class="selection">
+                    <div><button id="1" class="r_btn">Rock</button></div>
+                    <div><button id="2" class="p_btn">Paper</button></div>
+                    <div><button id="3" class="s_btn">Scissors</button></div>
+                </div>
+            </div>
+            
+            <div class="rps_img c_img">two</div>
         </div>
         <!-- rps selection section -->
-        <div class="selection">
-            <div class="r_btn"></div>
-            <div class="p_btn"></div>
-            <div class="s_btn"></div>
-        </div>
+        
     </main>
     <footer>
 
     </footer>
-    
 </body>
 </html>
