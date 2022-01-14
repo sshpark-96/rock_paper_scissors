@@ -32,13 +32,13 @@ let playerChoice = ()=>{
         button.addEventListener('click', ()=>{
             console.log(button.id);
             if(button.id == 1){
-                p_img.style.backgroundImage = "url('/img/l_r.png')";
+                p_img.style.backgroundImage = "url('./img/l_r.png')";
                 p_pick = "rock";
             } else if (button.id == 2){
-                p_img.style.backgroundImage = "url('/img/l_p.png')";
+                p_img.style.backgroundImage = "url('./img/l_p.png')";
                 p_pick = "paper";
             } else if (button.id ==  3){
-                p_img.style.backgroundImage = "url('/img/l_s.png')";
+                p_img.style.backgroundImage = "url('./img/l_s.png')";
                 p_pick = "scissors";
             }
             game(p_pick);
@@ -50,11 +50,11 @@ let playerChoice = ()=>{
 let computerChoice = ()=>{
     random = Math.floor(Math.random() * rps.length);
     if(random == 0){
-        c_img.style.backgroundImage = "url('/img/r_r.png')";
+        c_img.style.backgroundImage = "url('./img/r_r.png')";
     } else if(random == 1){
-        c_img.style.backgroundImage = "url('/img/r_p.png')";
+        c_img.style.backgroundImage = "url('./img/r_p.png')";
     } else if(random == 2){
-        c_img.style.backgroundImage = "url('/img/r_s.png')";
+        c_img.style.backgroundImage = "url('./img/r_s.png')";
     }
     console.log(rps[random]);
     return (rps[random]);
