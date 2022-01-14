@@ -49,7 +49,7 @@ main {
   min-height: 300px;
   border: white 2px solid;
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .p_img {
