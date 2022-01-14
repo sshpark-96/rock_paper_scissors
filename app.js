@@ -30,7 +30,6 @@ const computer_score = document.querySelector('p.c_score');
 let playerChoice = ()=>{
     buttons.forEach((button) =>{
         button.addEventListener('click', ()=>{
-            console.log(button.id);
             if(button.id == 1){
                 p_img.style.backgroundImage = "url('./img/l_r.png')";
                 p_pick = "rock";
@@ -56,7 +55,6 @@ let computerChoice = ()=>{
     } else if(random == 2){
         c_img.style.backgroundImage = "url('./img/r_s.png')";
     }
-    console.log(rps[random]);
     return (rps[random]);
 }
 
@@ -108,8 +106,6 @@ let playAgain = () => {
 
 // Start a game
 let game = (player_pick)=>{
-
-    console.log(player_pick);
     let computer_pick = computerChoice();
     playRound(player_pick, computer_pick);
     // Repeat until
