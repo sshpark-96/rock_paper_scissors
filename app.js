@@ -96,8 +96,8 @@ let playAgain = () => {
         message_2.removeChild(new_message);
         player_score.textContent = p_score;
         computer_score.textContent = c_score;
-        p_img.style.backgroundImage = "url('/img/l_r.png')";
-        c_img.style.backgroundImage = "url('/img/r_r.png')";
+        p_img.style.backgroundImage = "url('./img/l_r.png')";
+        c_img.style.backgroundImage = "url('./img/r_r.png')";
         message.textContent = "Choose: Rock, Paper, or Scissors";
         sub_message.textContent = "";
         
