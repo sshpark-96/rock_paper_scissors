@@ -5,22 +5,21 @@ let player_score = 0, computer_score = 0;
 let player_pick, computer_pick;
 let message_content;
 
-let message = document.getElementsByClassName('message');
-
-let buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-    button.addEventListener('click', ()=>{
-        if(button.id){
-            console.log(button.id)
-            message.textContent = button.textContent;
-            console.log(message);
-        }
-    });
-});
+const message = document.querySelector('p.message');
+const player_img = document.querySelector('div.p_img');
+const computer_img = document.querySelector('div.c_img');
+const buttons = document.querySelectorAll('button');
 
 
 let computerPlay = () =>{
     random = Math.floor(Math.random() * rps.length);
+    if(random == 0){
+        computer_img.style.cssText = "background-image: url('/img/r_r.png');";
+    } else if(random == 1){
+        computer_img.style.cssText = "background-image: url('/img/r_p.png');";
+    } else if(random == 2){
+        computer_img.style.cssText = "background-image: url('/img/r_s.png');";
+    }
     return (rps[random]);
 }
 
@@ -43,21 +42,34 @@ let playRound = (p, c) => {
     console.log("You: " + player_score + " Computer: " + computer_score);
 }
 
-let game = () =>{
+let game = (user_id) =>{
 
-    while(player_score < 5 && computer_score < 5){
-        computer_pick = computerPlay();
-        player_pick = "rock";
-        playRound(player_pick, computer_pick);
+    
+    computer_pick = computerPlay();
+    console.log(user_id);
+    playRound(user_id, computer_pick);
+    if((player_score == 5) || (computer_score == 5)){
+        if(player_score = 5){
+            console.log("Player Wins!");
+        } else {
+            console.log("Computer Wins!");
+        }
     }
-    if(player_score > computer_score){
-        console.log("Player Wins!");
-    } else {
-        console.log("Computer Wins!");
-    }
+    
 
     //ask player if they want to play again
     //if yes, then set player_score and computer_score to 0 again and game()
 }
 
-game();
+buttons.forEach((button) => {
+    button.addEventListener('click', ()=>{
+        if(button.id == 1){
+            player_pick = "rock"
+        } else if (button.id == 2){
+            player_pick = "paper"
+        } else if (button.id ==  3){
+            player_pick = "scissors"
+        }
+        game(player_pick);
+    });
+});
